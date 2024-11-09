@@ -3,6 +3,7 @@ require("reshape2")
 require("lda")
 require("tm")
 require("topicmodels")
+library(wordcloud)
 #2.1.
 file_stopW <- file('C:/Users/Emmanuel/Documents/Data Science/ITBDA4-14/project 2/stopwords.txt','r' ) 
 stop_w <- flines <- readLines(file_stopW) 
@@ -164,3 +165,5 @@ wordcloud(names(top_words2), top_words2, min.freq = 1, max.words = 50, random.or
 #Topic 3
 wordcloud(names(top_words3), top_words3, min.freq = 1, max.words = 50, random.order = FALSE, 
           rot.per = 0.35, colors = brewer.pal(8,"Dark2"))
+
+print(posterior(lda_model))
